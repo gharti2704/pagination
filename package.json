@@ -2,7 +2,7 @@
   "name": "pagination",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "start:build": "tsc -w",
     "start:run": "nodemon ./build/index.js",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "concurrently": "^8.0.1"
+    "concurrently": "^8.0.1",
+    "typescript": "^5.0.4"
   }
 }
