@@ -9,15 +9,17 @@ export const createPhotos = async (req: Request, res: Response) => {
     const { data }: { data: IPhoto[] } = await axios.get(
       'https://jsonplaceholder.typicode.com/photos'
     );
-    await Photo.create(data);
+    const photos = new Photo();
+    await photos.savePhotos(data);
     res.status(201).send({ message: 'Photos created sucessfully.' });
   } catch (error: any) {
     res.status(500).send({ message: error.message });
   }
 };
 
-export const getPhotos = (req: Request, res: Response) =>
+export const getPhotos = (req: Request, res: Response) => {
   res.status(200).send(res.locals.data);
+};
 
 //Make an API call to JSONPlaceholder to retrive todos
 export const createTodos = async (req: Request, res: Response) => {
@@ -25,7 +27,8 @@ export const createTodos = async (req: Request, res: Response) => {
     const { data }: { data: ITodo[] } = await axios.get(
       'https://jsonplaceholder.typicode.com/todos'
     );
-    await Todo.create(data);
+    const todos = new Todo();
+    await todos.saveTodos(data);
     res.status(201).send({ message: 'Todos created sucessfully.' });
   } catch (error: any) {
     res.status(500).send({ message: error.message });

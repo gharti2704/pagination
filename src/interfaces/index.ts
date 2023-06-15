@@ -1,11 +1,12 @@
-export interface IPhoto {
+import { Document } from 'mongoose';
+export interface IPhoto extends Document {
   id: string;
   title: string;
   url?: string;
   thumbnailUrl?: string;
 }
 
-export interface ITodo {
+export interface ITodo extends Document {
   id: string;
   title: string;
   completed?: boolean;
