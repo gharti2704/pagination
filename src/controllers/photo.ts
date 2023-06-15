@@ -6,7 +6,7 @@ import { photo } from '../routes/index.js';
 export class PhotoController {
   static async createPhotos(req: Request, res: Response) {
     try {
-      //Make an API call to JSONPlaceholder to retrive photos
+      //Make an API call to JSON Placeholder to retrive photos
       const { data }: { data: IPhoto[] } = await axios.get<IPhoto[]>(
         'https://jsonplaceholder.typicode.com/photos'
       );

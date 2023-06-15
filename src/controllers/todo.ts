@@ -6,7 +6,7 @@ import { todo } from '../routes/index.js';
 export class TodoController {
   static async createTodos(req: Request, res: Response) {
     try {
-      //Make an API call to JSONPlaceholder to retrive todos
+      //Make an API call to JSON Placeholder to retrive todos
       const { data }: { data: ITodo[] } = await axios.get<ITodo[]>(
         'https://jsonplaceholder.typicode.com/todos'
       );
