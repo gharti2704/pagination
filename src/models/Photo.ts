@@ -1,11 +1,11 @@
 import { Schema, model, Model } from 'mongoose';
-import { IPhoto } from '../interfaces';
+import { IPhoto } from '../interfaces/index.js';
 
 export class Photo {
   private photoModel: Model<IPhoto>;
 
   constructor() {
-    const photSchema = new Schema<IPhoto>({
+    const photoSchema = new Schema<IPhoto>({
       id: {
         type: String,
         unique: true,
@@ -24,7 +24,7 @@ export class Photo {
         required: [true, 'thumbnailUrl field is required'],
       },
     });
-    this.photoModel = model<IPhoto>('photo', photSchema);
+    this.photoModel = model<IPhoto>('photo', photoSchema);
   }
 
   public async savePhotos(photos: IPhoto[]) {
@@ -32,13 +32,12 @@ export class Photo {
       await this.photoModel.create(photos);
     } catch (error) {
       if (error instanceof Error) {
-        console.log(error.message);
         throw new Error(error.message);
       }
     }
   }
 
-  public getPhotoModel() {
+  get model() {
     return this.photoModel;
   }
 }

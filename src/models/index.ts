@@ -1,3 +1,3 @@
-export { Photo } from './Photo';
-export { Todo } from './Todo';
-export { Paginate } from './Paginate';
+export { Photo } from './Photo.js';
+export { Todo } from './Todo.js';
+export { Pagination } from './Pagination.js';

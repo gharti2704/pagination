@@ -1,5 +1,5 @@
 import { Model, model, Schema } from 'mongoose';
-import { ITodo } from '../interfaces';
+import { ITodo } from '../interfaces/index.js';
 
 export class Todo {
   private todoModel: Model<ITodo>;
@@ -34,7 +34,7 @@ export class Todo {
     }
   }
 
-  public getTodoModel() {
+  get model() {
     return this.todoModel;
   }
 }

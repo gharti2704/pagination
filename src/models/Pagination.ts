@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 import { Model } from 'mongoose';
-import { IData, IPhoto, ITodo } from '../interfaces';
+import { IData, IPhoto, ITodo } from '../interfaces/index.js';
 
-export class Paginate {
+export class Pagination {
   // Higher order function that takes a model as parameters and returns an anonymous funciton
   // which is a middleware function that handles pagination,
   // a way of presenting large dataset into more manageable chunks.
-  static getPaginatedData(
+  static paginateData(
     model: Model<IPhoto | ITodo>
   ): (req: Request, res: Response, next: NextFunction) => Promise<void> {
     return async (req: Request, res: Response, next: NextFunction) => {

@@ -1,17 +1,25 @@
 import { Router } from 'express';
-import { createPhotos, createTodos, getPhotos, getTodos } from '../controllers';
-import { Paginate, Photo, Todo } from '../models';
+import { PhotoController, TodoController } from '../controllers/index.js';
+import { Pagination, Photo, Todo } from '../models/index.js';
 
 const router = Router();
 
-const photo = new Photo();
-const todo = new Todo();
-const todoModel = todo.getTodoModel();
-const photModel = photo.getPhotoModel();
+export const photo = new Photo();
+export const todo = new Todo();
+const todoModel = todo.model;
+const photoModel = photo.model;
 
-router.post('/create-photos', createPhotos);
-router.get('/photos', Paginate.getPaginatedData(photModel), getPhotos);
-router.post('/create-todos', createTodos);
-router.get('/todos', Paginate.getPaginatedData(todoModel), getTodos);
+router.post('/create-photos', PhotoController.createPhotos);
+router.get(
+  '/photos',
+  Pagination.paginateData(photoModel),
+  PhotoController.getPhotos
+);
+router.post('/create-todos', TodoController.createTodos);
+router.get(
+  '/todos',
+  Pagination.paginateData(todoModel),
+  TodoController.getTodos
+);
 
 export const routes = router;
