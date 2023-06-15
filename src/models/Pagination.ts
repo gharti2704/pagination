@@ -11,12 +11,14 @@ export class Pagination {
   ): (req: Request, res: Response, next: NextFunction) => Promise<void> {
     return async (req: Request, res: Response, next: NextFunction) => {
       try {
-        const page = parseInt(
+        const pageNumber = parseInt(
           typeof req.query.page === 'string' ? req.query.page : '1'
         );
-        const limit = parseInt(
+        const limitNumber = parseInt(
           typeof req.query.limit === 'string' ? req.query.limit : '10'
         );
+        const page = pageNumber || 1;
+        const limit = limitNumber || 10;
         const startIndex = (page - 1) * limit;
         const endIndex = page * limit;
 
