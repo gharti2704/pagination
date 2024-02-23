@@ -24,16 +24,6 @@ export class Todo {
     this.todoModel = model<ITodo>('todo', todoSchema);
   }
 
-  async saveTodos(todos: ITodo[]) {
-    try {
-      await this.todoModel.create(todos);
-    } catch (error) {
-      if (error instanceof Error) {
-        throw new Error(error.message);
-      }
-    }
-  }
-
   get model() {
     return this.todoModel;
   }
