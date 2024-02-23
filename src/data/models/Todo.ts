@@ -1,5 +1,5 @@
 import { Model, model, Schema } from 'mongoose';
-import { ITodo } from '../interfaces/index.js';
+import { ITodo } from '../interface/index.js';
 
 export class Todo {
   private todoModel: Model<ITodo>;

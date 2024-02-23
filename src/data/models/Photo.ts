@@ -1,5 +1,5 @@
 import { Schema, model, Model } from 'mongoose';
-import { IPhoto } from '../interfaces/index.js';
+import { IPhoto } from '../interface/index.js';
 
 export class Photo {
   private photoModel: Model<IPhoto>;
