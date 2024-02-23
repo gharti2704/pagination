@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
-import { IPhoto } from '../interfaces/index.js';
-import { IPhotoService } from '../service/IPhotoService.js';
+import { IPhoto } from '../data/interface/index.js';
+import { IPhotoService } from '../service/interface/IPhotoService.js';
 export class PhotoController {
   private photoService: IPhotoService;
 

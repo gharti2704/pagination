@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import axios from 'axios';
-import { ITodo } from '../interfaces/index.js';
-import { ITodoService } from '../service/ITodoService.js';
+import { ITodo } from '../data/interface/index.js';
+import { ITodoService } from '../service/interface/ITodoService.js';
 
 export class TodoController {
   private todoService: ITodoService;

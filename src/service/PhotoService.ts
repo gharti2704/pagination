@@ -1,6 +1,6 @@
 import { photo } from '../data/index.js';
-import { IPhoto } from '../interfaces/index.js';
-import { IPhotoService } from './IPhotoService.js';
+import { IPhoto } from '../data/interface/index.js';
+import { IPhotoService } from './interface/IPhotoService.js';
 
 export class PhotoService implements IPhotoService {
   public async getPhotos(page: number, limit: number): Promise<IPhoto[]> {

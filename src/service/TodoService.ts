@@ -1,6 +1,6 @@
 import { todo } from '../data/index.js';
-import { ITodo } from '../interfaces/index.js';
-import { ITodoService } from './ITodoService.js';
+import { ITodo } from '../data/interface/index.js';
+import { ITodoService } from './interface/ITodoService.js';
 
 export class TodoService implements ITodoService {
   public async getTodos(page: number, limit: number): Promise<ITodo[]> {
