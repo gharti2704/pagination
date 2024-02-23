@@ -1,7 +1,7 @@
 import { connect } from 'mongoose';
 
 export class Database {
-  static async initDB(): Promise<void> {
+  public async initDB(): Promise<void> {
     try {
       await connect('mongodb://localhost/pagination');
       console.log('Connected to MongoDB database');

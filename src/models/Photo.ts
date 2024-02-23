@@ -27,16 +27,6 @@ export class Photo {
     this.photoModel = model<IPhoto>('photo', photoSchema);
   }
 
-  public async savePhotos(photos: IPhoto[]) {
-    try {
-      await this.photoModel.create(photos);
-    } catch (error) {
-      if (error instanceof Error) {
-        throw new Error(error.message);
-      }
-    }
-  }
-
   get model() {
     return this.photoModel;
   }
