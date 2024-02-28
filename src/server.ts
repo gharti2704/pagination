@@ -1,6 +1,6 @@
 import express, { Express } from 'express';
 import { db } from './data/index.js';
-import { routes } from './routes/index.js';
+import { routes } from './route/index.js';
 
 const app: Express = express();
 

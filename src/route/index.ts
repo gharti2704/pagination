@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { PhotoController, TodoController } from '../controllers/index.js';
+import { PhotoController, TodoController } from '../controller/index.js';
 import { pagination, photo, todo } from '../data/index.js';
 import { PhotoService } from '../service/PhotoService.js';
 import { TodoService } from '../service/TodoService.js';
